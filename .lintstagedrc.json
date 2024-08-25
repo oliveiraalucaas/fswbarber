@@ -1,0 +1,3 @@
+{
+    "*.ts?(x)": ["esLint --fix" , "prettier --write"]
+}
