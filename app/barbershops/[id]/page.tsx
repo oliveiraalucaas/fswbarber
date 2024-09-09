@@ -51,7 +51,7 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
         <Button
           size="icon"
           variant="secondary"
-          className="absolut right-4 top-4"
+          className="absolute right-4 top-4"
         >
           <MenuIcon />
         </Button>
@@ -81,9 +81,11 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
           <h2 className="text-xs font-bold uppercase text-gray-400">
             Serviços
           </h2>
-          {barbershop.services.map((service) => (
-            <ServiceItem key={service.id} service={service} />
-          ))}
+          <div className="space-y-3 p-5">
+            {barbershop.services.map((service) => (
+              <ServiceItem key={service.id} service={service} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
