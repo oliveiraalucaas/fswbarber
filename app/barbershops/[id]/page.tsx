@@ -6,7 +6,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import ServiceItem from "@/app/_components/service-item"
 import PhoneItem from "@/app/_components/phone-item"
-import SidebarSheet from "@/app/_components/siderbar-sheet"
+import SidebarSheet from "@/app/_components/sidebar-sheet"
 import { Sheet, SheetTrigger } from "@/app/_components/ui/sheet"
 
 interface BarbershopPageProps {
