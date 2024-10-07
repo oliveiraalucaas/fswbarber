@@ -49,7 +49,7 @@ const SidebarSheet = () => {
       </div>
 
       <div className="flex flex-col gap-2 border-b border-solid py-5">
-        <SheetClose asChild>
+        <SheetClose>
           <Button className="justify-start gap-2" variant="ghost" asChild>
             <Link href="/">
               <HomeIcon size={18} />
@@ -58,9 +58,11 @@ const SidebarSheet = () => {
           </Button>
         </SheetClose>
 
-        <Button className="justify-start gap-2" variant="ghost">
-          <CalendarIcon size={18} />
-          Agendamentos
+        <Button className="justify-start gap-2" variant="ghost" asChild>
+          <Link href="/bookings">
+            <CalendarIcon size={18} />
+            Agendamentos
+          </Link>
         </Button>
       </div>
       <div className="flex flex-col gap-2 border-b border-solid py-5">

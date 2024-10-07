@@ -161,6 +161,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                   currency: "BRL",
                 }).format(Number(service.price))}{" "}
               </p>
+
               <Sheet
                 open={bookingSheetIsOpen}
                 onOpenChange={handleBookingSheetOpenChange}
