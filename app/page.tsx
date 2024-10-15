@@ -8,6 +8,8 @@ import BookingItem from "./_components/booking-item"
 import Search from "./_components/search"
 import { getServerSession } from "next-auth"
 import { authOptions } from "./_lib/auth"
+import { format } from "date-fns"
+import { ptBR } from "date-fns/locale"
 
 const Home = async () => {
   //chamar banco de dados
@@ -47,8 +49,20 @@ const Home = async () => {
       <div className="p-5">
         {/*texto */}
 
-        <h2 className="text-xL font-bold">Olá, Lucas</h2>
-        <p>Segunda 26/08</p>
+        <h2 className="text-xL font-bold">
+          Olá, {session?.user ? session.user.name : "bem vindo"}
+        </h2>
+        <p>
+          <span className="capitalize">
+            {" "}
+            {format(new Date(), "EEEE, dd ", { locale: ptBR })}
+          </span>
+          <span>de</span>
+          <span className="capitalize">
+            {" "}
+            {format(new Date(), "MMMM", { locale: ptBR })}
+          </span>
+        </p>
 
         {/* Busca */}
         <div className="mt-6">
