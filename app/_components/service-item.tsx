@@ -84,7 +84,7 @@ const getTimeList = ({ bookings, selectedDay }: GetTimeListProps) => {
 }
 
 const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
-  const [signInDialogIsOpen, setsignInDialogIsOpen] = useState(false)
+  const [signInDialogIsOpen, setSignInDialogIsOpen] = useState(false)
   const { data } = useSession()
   const [selectedDay, setSelectedDay] = useState<Date | undefined>(undefined)
   const [selectedTime, setSelectedTime] = useState<string | undefined>(
@@ -110,7 +110,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
     if (data?.user) {
       return setBookingSheetIsOpen(true)
     }
-    return setsignInDialogIsOpen(true)
+    return setSignInDialogIsOpen(true)
   }
 
   const handleBookingSheetOpenChange = () => {
@@ -229,7 +229,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                     />
                   </div>
                   {selectedDay && (
-                    <div className="border-solidd flex gap-3 overflow-x-auto border-b p-5 [&::-webkit-scrollbar]:hidden">
+                    <div className="flex gap-3 overflow-x-auto border-b border-solid p-5 [&::-webkit-scrollbar]:hidden">
                       {timeList.length > 0 ? (
                         timeList.map((time) => (
                           <Button
@@ -305,7 +305,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
 
       <Dialog
         open={signInDialogIsOpen}
-        onOpenChange={(open) => setsignInDialogIsOpen(open)}
+        onOpenChange={(open) => setSignInDialogIsOpen(open)}
       >
         <DialogContent className="width-[90%]">
           <SignInDialog />
